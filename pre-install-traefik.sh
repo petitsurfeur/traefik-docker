@@ -9,11 +9,12 @@ set -e
 
 echo -e "${GREEN}### Installation des prerequis a Traefik${NOCOLOR}"
 
+rm /opt/container/traefik/ -R
 mkdir -p /opt/container/traefik
-mkdir -p /opt/container/traefik/data
-touch /opt/container/traefik/data/acme.json
-chmod 600 /opt/container/traefik/data/acme.json
-touch /opt/container/traefik/data/traefik.yml
+mkdir -p /opt/container/traefik/conf
+touch /opt/container/traefik/conf/acme.json
+chmod 600 /opt/container/traefik/conf/acme.json
+cp conf/traefik.toml /opt/container/traefik/conf/traefik.toml
 
 
 
